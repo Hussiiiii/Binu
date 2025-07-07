@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap');
 
 * {
   margin: 0;
@@ -32,13 +31,12 @@ body {
 
 .playlist-header-title {
   font-family: 'Cairo', sans-serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #ffccff;
-  text-shadow: 0 0 12px rgba(255, 153, 204, 0.3);
+  color: #ffb6e6;
+  text-shadow: 0 0 10px rgba(255, 153, 204, 0.3);
   letter-spacing: 1px;
 }
-
 
 /* Songs */
 .songs-section {
@@ -330,10 +328,3 @@ body {
   border-radius: 6px;
   object-fit: cover;
 }
-.queue-item.now-playing {
-  background: #333;
-  border-radius: 8px;
-  padding: 0.4rem 0.6rem;
-  box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
-}
-
