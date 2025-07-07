@@ -1,78 +1,1191 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dope Shope – Bindu's Playlist</title>
+  <title>Dope Shope Bindu's Playlist</title>
   <link rel="stylesheet" href="dope-shope.css" />
   <link rel="icon" type="image/png" href="images/Page 1/favicon.png" />
-  <script defer src="scripts/player.js"></script>
+  <script defer src="dopeshope.js"></script>
 </head>
 <body>
-
-  <!-- Header Section -->
+  <!-- Header with playlist image and title -->
   <section class="playlist-hero-row">
-    <img src="images/Page 2/Dope-shope.webp" alt="Dope Shope" class="playlist-thumb large" />
-    <h1 class="playlist-name">Dope Shope</h1>
+    <img src="images/Page 2/Dope-shope.webp" alt="Dope shope" class="playlist-thumb large" />
+    <h1 class="playlist-header-title">Dope shope</h1>
   </section>
 
-  <!-- Songs List -->
-  <section class="songs-section">
-    <div class="song-row" onclick="playSong('audio/dope1.mp3', 'Dope Beat 1', 'images/Page 2/Dope-shope.webp')">
-      <span class="track-number">1</span>
-      <div class="song-title">Dope Beat 1</div>
-    <div class="song-icons">
-  <a href="https://open.spotify.com/" target="_blank">
-    <img src="images/icons/spot.png" alt="Spotify" class="icon" />
-  </a>
-  <a href="https://youtube.com/" target="_blank">
-    <img src="images/icons/youtube.png" alt="YouTube" class="icon" />
-  </a>
-  <button onclick="toggleLyrics(this)">🎤</button>
-</div>
 
-    </div>
-    <div class="lyrics hidden">
-      Lyrics for Dope Beat 1 go here...
-    </div>
-
-    <!-- Add more songs below in same format -->
-  </section>
-
-  <!-- Music Player -->
-<!-- Bottom Music Player -->
-<div id="custom-player">
-  <!-- Left -->
-  <div class="player-left">
-    <img id="player-cover" src="images/Page 2/[HIGH-TIME].webp" alt="Cover" />
-    <div id="player-title">Track Name</div>
-  </div>
-
-  <!-- Center -->
-  <div class="player-center">
-    <div class="control-buttons">
-      <button id="shuffle"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
-      <button id="prev"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
-      <button id="play-pause"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
-      <button id="next"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
-      <button id="loop"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
-    </div>
-    <div class="timeline-wrapper">
-      <span id="current-time">0:00</span>
-      <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
-      <span id="duration">0:00</span>
-    </div>
-  </div>
-
-  <!-- Right -->
-  <div class="player-right">
-    <button id="volume"><img src="images/icons/volume.svg" alt="Volume" class="icon"></button>
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
-    <button id="lyrics-toggle"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
-    <button id="queue"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
+ <div class="song-row" data-index="0" onclick="queueAndPlay(0)">
+  <span class="track-number">1</span>
+  <img src="images/dopeshope/Yeh Baby.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Yeh Baby</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4bAimZUcP0JK806hdCuAjt" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(0)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
   </div>
 </div>
+<div class="lyrics hidden">Lyrics for Yeh Baby...</div>
+
+<div class="song-row" data-index="1" onclick="queueAndPlay(1)">
+  <span class="track-number">2</span>
+  <img src="images/dopeshope/Baller.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Baller</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/42TMa2hgBNjte4uV7jNCnQ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(1)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Baller...</div>
+
+<div class="song-row" data-index="2" onclick="queueAndPlay(2)">
+  <span class="track-number">3</span>
+  <img src="images/dopeshope/Born to Shine.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Born to Shine</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4XxfOvudrnBRdlgzEaq1sd" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(2)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Born to Shine...</div>
+
+<div class="song-row" data-index="3" onclick="queueAndPlay(3)">
+  <span class="track-number">4</span>
+  <img src="images/dopeshope/Do You Know.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Do You Know</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3kKfPlamJ5CO6j9tA4RdyS" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(3)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Do You Know...</div>
+
+<div class="song-row" data-index="4" onclick="queueAndPlay(4)">
+  <span class="track-number">5</span>
+  <img src="images/dopeshope/Wakhra Swag.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Wakhra Swag</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4a4IeXUf9Alik3S7WS1eEl" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(4)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Wakhra Swag...</div>
+
+<div class="song-row" data-index="5" onclick="queueAndPlay(5)">
+  <span class="track-number">6</span>
+  <img src="images/dopeshope/8 Parche.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">8 Parche</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/42ETKyApzUl8hTtytFAjen" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(5)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for 8 Parche...</div>
+
+<div class="song-row" data-index="6" onclick="queueAndPlay(6)">
+  <span class="track-number">7</span>
+  <img src="images/dopeshope/Getup Jawani.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Getup Jawani</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0eggrcnyZPWwtHIkRLtAIU" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(6)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Getup Jawani...</div>
+
+<div class="song-row" data-index="7" onclick="queueAndPlay(7)">
+  <span class="track-number">8</span>
+  <img src="images/dopeshope/Ik Tera.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ik Tera</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/57DhVYA7E1CyrE4OKuyLb7" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(7)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ik Tera...</div>
+
+<div class="song-row" data-index="8" onclick="queueAndPlay(8)">
+  <span class="track-number">9</span>
+  <img src="images/dopeshope/Sahiba.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Sahiba</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3eIdE2PTzeZ3FCODXmsfF9" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(8)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Sahiba...</div>
+
+<div class="song-row" data-index="9" onclick="queueAndPlay(9)">
+  <span class="track-number">10</span>
+  <img src="images/dopeshope/Daru Badnaam.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Daru Badnaam</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2TzyJEUfWHGRsk3r6Emvbk" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(9)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Daru Badnaam...</div>
+
+<div class="song-row" data-index="10" onclick="queueAndPlay(10)">
+  <span class="track-number">11</span>
+  <img src="images/dopeshope/Pagol.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Pagol</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7MpfARGQRFqZxHEWLBjDkx" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(10)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Pagol...</div>
+
+<div class="song-row" data-index="11" onclick="queueAndPlay(11)">
+  <span class="track-number">12</span>
+  <img src="images/dopeshope/Backbone.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Backbone</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4t77OsiudWy4timV32lPa2" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(11)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Backbone...</div>
+
+<div class="song-row" data-index="12" onclick="queueAndPlay(12)">
+  <span class="track-number">13</span>
+  <img src="images/dopeshope/Same Beef.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Same Beef</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/65c6VCikt7f5sAS1heoYQC" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(12)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Same Beef...</div>
+
+<div class="song-row" data-index="13" onclick="queueAndPlay(13)">
+  <span class="track-number">14</span>
+  <img src="images/dopeshope/Hornn Blow.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Hornn Blow</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/170bb45dHeLQdCZjAltIiB" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(13)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Hornn Blow...</div>
+
+<div class="song-row" data-index="14" onclick="queueAndPlay(14)">
+  <span class="track-number">15</span>
+  <img src="images/dopeshope/Laal Bindi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Laal Bindi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1a9fgoiGXoWmaFm60n1YeK" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(14)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Laal Bindi...</div>
+
+<div class="song-row" data-index="15" onclick="queueAndPlay(15)">
+  <span class="track-number">16</span>
+  <img src="images/dopeshope/No Competition.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">No Competition</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1TRgZ55GFCKSbrTb62rmra" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(15)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for No Competition...</div>
+
+<div class="song-row" data-index="16" onclick="queueAndPlay(16)">
+  <span class="track-number">17</span>
+  <img src="images/dopeshope/Ishare Tere (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ishare Tere (From  Ishare Tere )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3bHI0o9TLQ2jJzjr0ES7dX" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(16)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ishare Tere (From  Ishare Tere )...</div>
+
+<div class="song-row" data-index="17" onclick="queueAndPlay(17)">
+  <span class="track-number">18</span>
+  <img src="images/dopeshope/We Rollin.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">We Rollin</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6ZYxNjuAU9Vy3VtF6W1dtE" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(17)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for We Rollin...</div>
+
+<div class="song-row" data-index="18" onclick="queueAndPlay(18)">
+  <span class="track-number">19</span>
+  <img src="images/dopeshope/Excuses.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Excuses</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/29m79w9xPMH4YCD6r8JSmV" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(18)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Excuses...</div>
+
+<div class="song-row" data-index="19" onclick="queueAndPlay(19)">
+  <span class="track-number">20</span>
+  <img src="images/dopeshope/Na Ja.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Na Ja</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/32LKwbmh6yVsWoRRF8DIvf" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(19)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Na Ja...</div>
+
+<div class="song-row" data-index="20" onclick="queueAndPlay(20)">
+  <span class="track-number">21</span>
+  <img src="images/dopeshope/Kya Baat Ay.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kya Baat Ay</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1ZaeaGLhFSckG8sv1y7AWk" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(20)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kya Baat Ay...</div>
+
+<div class="song-row" data-index="21" onclick="queueAndPlay(21)">
+  <span class="track-number">22</span>
+  <img src="images/dopeshope/Jatt Da Muqabala.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Jatt Da Muqabala</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/71Udwiv5GsZghU6XQ5LXQj" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(21)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Jatt Da Muqabala...</div>
+
+<div class="song-row" data-index="22" onclick="queueAndPlay(22)">
+  <span class="track-number">23</span>
+  <img src="images/dopeshope/Call Aundi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Call Aundi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4QL3uGdj4WNW40o3Vq33sw" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(22)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Call Aundi...</div>
+
+<div class="song-row" data-index="23" onclick="queueAndPlay(23)">
+  <span class="track-number">24</span>
+  <img src="images/dopeshope/One Bottle Down.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">One Bottle Down</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3hVc5y5mbcIEPADRGGGru9" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(23)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for One Bottle Down...</div>
+
+<div class="song-row" data-index="24" onclick="queueAndPlay(24)">
+  <span class="track-number">25</span>
+  <img src="images/dopeshope/High Heels.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">High Heels</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7q7eYVerltlW2sYBuga6Mj" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(24)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for High Heels...</div>
+
+<div class="song-row" data-index="25" onclick="queueAndPlay(25)">
+  <span class="track-number">26</span>
+  <img src="images/dopeshope/She Don't Know (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">She Don't Know (From  Blessed )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1Wa7AxnMAtKOdlkx2NKeB0" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(25)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for She Don't Know (From  Blessed )...</div>
+
+<div class="song-row" data-index="26" onclick="queueAndPlay(26)">
+  <span class="track-number">27</span>
+  <img src="images/dopeshope/Lahore (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lahore (From  Lahore )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5VGINWbl9DKfr8a9QiCeOX" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(26)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lahore (From  Lahore )...</div>
+
+<div class="song-row" data-index="27" onclick="queueAndPlay(27)">
+  <span class="track-number">28</span>
+  <img src="images/dopeshope/Dance Like.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dance Like</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/36EPfDEkfLYQLt8Fvced8x" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(27)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dance Like...</div>
+
+<div class="song-row" data-index="28" onclick="queueAndPlay(28)">
+  <span class="track-number">29</span>
+  <img src="images/dopeshope/Nazar Lag Jayegi (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Nazar Lag Jayegi (From  Nazar Lag Jayegi )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3JA3m8zYAUJ5Pxg7J9xBhW" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(28)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Nazar Lag Jayegi (From  Nazar Lag Jayegi )...</div>
+
+<div class="song-row" data-index="29" onclick="queueAndPlay(29)">
+  <span class="track-number">30</span>
+  <img src="images/dopeshope/High Rated Gabru (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">High Rated Gabru (From  High Rated Gabru )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2LEwvQq0PFtrmIl2dikenr" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(29)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for High Rated Gabru (From  High Rated Gabru )...</div>
+
+<div class="song-row" data-index="30" onclick="queueAndPlay(30)">
+  <span class="track-number">31</span>
+  <img src="images/dopeshope/Downtown (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Downtown (From  Downtown )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1bmrIYnKHtJSgjlPqZ08zP" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(30)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Downtown (From  Downtown )...</div>
+
+<div class="song-row" data-index="31" onclick="queueAndPlay(31)">
+  <span class="track-number">32</span>
+  <img src="images/dopeshope/Naah.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Naah</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0zRsGGueSQLRkYWs4kPA4V" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(31)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Naah...</div>
+
+<div class="song-row" data-index="32" onclick="queueAndPlay(32)">
+  <span class="track-number">33</span>
+  <img src="images/dopeshope/Tere Te (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tere Te (From  Tere Te )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1VJIbcx3IUh5xZEtOCDnua" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(32)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tere Te (From  Tere Te )...</div>
+
+<div class="song-row" data-index="33" onclick="queueAndPlay(33)">
+  <span class="track-number">34</span>
+  <img src="images/dopeshope/Hulara.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Hulara</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/27wnjg7nJ2haWoOuliq4Vu" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(33)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Hulara...</div>
+
+<div class="song-row" data-index="34" onclick="queueAndPlay(34)">
+  <span class="track-number">35</span>
+  <img src="images/dopeshope/Made In India (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Made In India (From  Made In India )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1VWKE1mEA5V1Y61fzJI6rg" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(34)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Made In India (From  Made In India )...</div>
+
+<div class="song-row" data-index="35" onclick="queueAndPlay(35)">
+  <span class="track-number">36</span>
+  <img src="images/dopeshope/Patola (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Patola (From  Patola ) (feat. Bohemia)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0skiFaUpr2RdRpsZvJeB6B" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(35)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Patola (From  Patola ) (feat. Bohemia)...</div>
+
+<div class="song-row" data-index="36" onclick="queueAndPlay(36)">
+  <span class="track-number">37</span>
+  <img src="images/dopeshope/Buzz (feat. Badshah).jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Buzz (feat. Badshah)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3XYvdqcZrTmRntFDDbJkJd" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(36)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Buzz (feat. Badshah)...</div>
+
+<div class="song-row" data-index="37" onclick="queueAndPlay(37)">
+  <span class="track-number">38</span>
+  <img src="images/dopeshope/Dheere Dheere.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dheere Dheere</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4fyR24BKznXBLNkK8LwWla" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(37)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dheere Dheere...</div>
+
+<div class="song-row" data-index="38" onclick="queueAndPlay(38)">
+  <span class="track-number">39</span>
+  <img src="images/dopeshope/Chaar Botal Vodka (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chaar Botal Vodka (From  Ragini Mms 2 )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0QHEWicUbdyWuHsMcVd1Ka" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(38)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chaar Botal Vodka (From  Ragini Mms 2 )...</div>
+
+<div class="song-row" data-index="39" onclick="queueAndPlay(39)">
+  <span class="track-number">40</span>
+  <img src="images/dopeshope/Lagdi Hai Thaai (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lagdi Hai Thaai (From  Simran )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7MhgY6NkS6Bmum4MDg7gFt" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(39)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lagdi Hai Thaai (From  Simran )...</div>
+
+<div class="song-row" data-index="40" onclick="queueAndPlay(40)">
+  <span class="track-number">41</span>
+  <img src="images/dopeshope/Proper Patola (From.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Proper Patola (From  Proper Patola ) (feat. Badshah)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1J2LcFOhhXbgn54CjxZz25" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(40)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Proper Patola (From  Proper Patola ) (feat. Badshah)...</div>
+
+<div class="song-row" data-index="41" onclick="queueAndPlay(41)">
+  <span class="track-number">42</span>
+  <img src="images/dopeshope/Kinni Kinni.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kinni Kinni</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5oVm4nHsLXs8YenSJEVfhG" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(41)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kinni Kinni...</div>
+
+<div class="song-row" data-index="42" onclick="queueAndPlay(42)">
+  <span class="track-number">43</span>
+  <img src="images/dopeshope/Hass Hass.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Hass Hass</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/72vuBPMhwFNlSYpTSf6fVD" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(42)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Hass Hass...</div>
+
+<div class="song-row" data-index="43" onclick="queueAndPlay(43)">
+  <span class="track-number">44</span>
+  <img src="images/dopeshope/Lemonade.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lemonade</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3ZGJhN4unVspOqpwGvUL2W" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(43)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lemonade...</div>
+
+<div class="song-row" data-index="44" onclick="queueAndPlay(44)">
+  <span class="track-number">45</span>
+  <img src="images/dopeshope/Suit Suit.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Suit Suit</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2mwBSO58y92EYmEFpDfmS7" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(44)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Suit Suit...</div>
+
+<div class="song-row" data-index="45" onclick="queueAndPlay(45)">
+  <span class="track-number">46</span>
+  <img src="images/dopeshope/Mi Amor.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Mi Amor</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/596Ak1Fq60HXqYaHoZc8q6" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(45)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Mi Amor...</div>
+
+<div class="song-row" data-index="46" onclick="queueAndPlay(46)">
+  <span class="track-number">47</span>
+  <img src="images/dopeshope/Admirin' You (feat. Preston Pablo).jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Admirin' You (feat. Preston Pablo)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6NJ8Z5GDoHe47R6gGX6sLq" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(46)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Admirin' You (feat. Preston Pablo)...</div>
+
+<div class="song-row" data-index="47" onclick="queueAndPlay(47)">
+  <span class="track-number">48</span>
+  <img src="images/dopeshope/Softly.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Softly</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0YQJoDL6f46J0n1rOVkpxJ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(47)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Softly...</div>
+
+<div class="song-row" data-index="48" onclick="queueAndPlay(48)">
+  <span class="track-number">49</span>
+  <img src="images/dopeshope/Winning Speech.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Winning Speech</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3FqtduiaqnFYvBgKuc6QWQ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(48)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Winning Speech...</div>
+
+<div class="song-row" data-index="49" onclick="queueAndPlay(49)">
+  <span class="track-number">50</span>
+  <img src="images/dopeshope/Tareefan.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tareefan</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2Oj9fYVgSyJ2LlGs1WTf3P" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(49)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tareefan...</div>
+
+<div class="song-row" data-index="50" onclick="queueAndPlay(50)">
+  <span class="track-number">51</span>
+  <img src="images/dopeshope/SPAIN.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">SPAIN</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4ZVtid5khBfDx6Co0vTUE6" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(50)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for SPAIN...</div>
+
+<div class="song-row" data-index="51" onclick="queueAndPlay(51)">
+  <span class="track-number">52</span>
+  <img src="images/dopeshope/Kamlee.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kamlee</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3W81Nm3KNOYUPaDHrwMzWz" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(51)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kamlee...</div>
+
+<div class="song-row" data-index="52" onclick="queueAndPlay(52)">
+  <span class="track-number">53</span>
+  <img src="images/dopeshope/Noormahal.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Noormahal</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6LAitVJIwyCy4bJGN9TIhn" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(52)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Noormahal...</div>
+
+<div class="song-row" data-index="53" onclick="queueAndPlay(53)">
+  <span class="track-number">54</span>
+  <img src="images/dopeshope/410.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">410</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0R1AZYXc34nfMaiengrkRc" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(53)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for 410...</div>
+
+<div class="song-row" data-index="54" onclick="queueAndPlay(54)">
+  <span class="track-number">55</span>
+  <img src="images/dopeshope/Love Ya.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Love Ya</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5RWZ6TVZ0HeFTdRWu3VQ7w" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(54)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Love Ya...</div>
+
+<div class="song-row" data-index="55" onclick="queueAndPlay(55)">
+  <span class="track-number">56</span>
+  <img src="images/dopeshope/Safar.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Safar</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/57XxjBWEg4bU5nnW5WCSBG" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(55)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Safar...</div>
+
+<div class="song-row" data-index="56" onclick="queueAndPlay(56)">
+  <span class="track-number">57</span>
+  <img src="images/dopeshope/Moon Rise.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Moon Rise</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3oWv5qDKYN7MH6FdlglMN5" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(56)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Moon Rise...</div>
+
+<div class="song-row" data-index="57" onclick="queueAndPlay(57)">
+  <span class="track-number">58</span>
+  <img src="images/dopeshope/Afsanay.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Afsanay</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/05sqcYfU2wMlKwPVJ0rotq" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(57)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Afsanay...</div>
+
+<div class="song-row" data-index="58" onclick="queueAndPlay(58)">
+  <span class="track-number">59</span>
+  <img src="images/dopeshope/Hola Amigo.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Hola Amigo</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/19pHSvXUwErAXFktkvYMk9" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(58)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Hola Amigo...</div>
+
+<div class="song-row" data-index="59" onclick="queueAndPlay(59)">
+  <span class="track-number">60</span>
+  <img src="images/dopeshope/So High.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">So High</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5PdLhmHOy2dnnFIMrj8in0" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(59)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for So High...</div>
+
+<div class="song-row" data-index="60" onclick="queueAndPlay(60)">
+  <span class="track-number">61</span>
+  <img src="images/dopeshope/100 Million.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">100 Million</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4OigMohZdysiJr7oiwu1IL" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(60)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for 100 Million...</div>
+
+<div class="song-row" data-index="61" onclick="queueAndPlay(61)">
+  <span class="track-number">62</span>
+  <img src="images/dopeshope/Overseas.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Top Class / Overseas</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4BDOA9pV0yLClbR3v37ekI" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(61)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Top Class / Overseas...</div>
+
+<div class="song-row" data-index="62" onclick="queueAndPlay(62)">
+  <span class="track-number">63</span>
+  <img src="images/dopeshope/Russian Bandana.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Russian Bandana</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1dFrZr9eMUsFqeag04ClqD" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(62)" class="queue-btn">
+      <img src="images/icons/add.svg" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Russian Bandana...</div>
 
 
+  <!-- Bottom Music Player -->
+  <div id="custom-player">
+    <div class="player-left">
+      <img id="player-cover" src="" alt="Cover" />
+      <div id="player-title">Track Name</div>
+    </div>
+    <div class="player-center">
+      <div class="control-buttons">
+        <button id="shuffle" onclick="toggleShuffle()"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
+        <button id="prev" onclick="prevSong()"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
+        <button id="play-pause" onclick="togglePlay()"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
+        <button id="next" onclick="nextSong()"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
+        <button id="loop" onclick="toggleLoop()"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
+      </div>
+      <div class="timeline-wrapper">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
+        <span id="total-duration">0:00</span>
+      </div>
+    </div>
+    <div class="player-right">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+      <button id="lyrics-toggle" onclick="toggleLyricsPlayer()"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
+      <button id="queue" onclick="showQueue()"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
+    </div>
+  </div>
+
+  <!-- Queue Modal -->
+  <div id="queue-modal" class="hidden">
+    <h3>Queue</h3>
+    <ul id="queue-list"></ul>
+    <button onclick="hideQueue()">Close</button>
+  </div>
+
+  <!-- Global Audio Element -->
+  <audio id="audio-player"></audio>
 </body>
 </html>
