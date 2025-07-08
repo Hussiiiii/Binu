@@ -1,88 +1,1963 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Desi Girls Playlist</title>
-  <link rel="stylesheet" href="desi-girls.css">
-  <link rel="icon" type="image/png" href="images/Page 1/favicon.png">
-  <script src="player.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>Desi girls - Bindu's Playlist</title>
+  <link rel="stylesheet" href="desi-girls.css" />
+  <link rel="icon" type="image/png" href="images/Page 1/favicon.png" />
+  <script defer src="desigirls.js"></script>
 </head>
 <body>
+  <!-- Header with playlist image and title -->
+  <section class="playlist-hero-row">
+    <img src="images/Page 2/Desi-girls.webp" alt="Desi girls" class="playlist-thumb large" />
+    <h1 class="playlist-header-title">Desi girls</h1>
+  </section>
 
-  <!-- Header -->
-  <div class="playlist-hero-row">
-    <img src="images/Page 2/Desi-girls.webp" alt="Desi Girls" class="playlist-thumb large">
-    <h1 class="playlist-title-individual">Desi Girls</h1>
-  </div>
-
-  <!-- Songs -->
-  <div class="songs-section">
-    <div class="song-row" onclick="playSong('songs/desi1.mp3', 'Desi Song 1', 'images/Page 2/Desi-girls.webp')">
-      <div class="track-number">1</div>
-      <div class="song-title">Desi Song 1</div>
-      <div class="song-icons">
-  <a href="https://open.spotify.com/" target="_blank">
-    <img src="images/icons/spot.png" alt="Spotify" class="icon" />
-  </a>
-  <a href="https://youtube.com/" target="_blank">
-    <img src="images/icons/youtube.png" alt="YouTube" class="icon" />
-  </a>
-  <button onclick="toggleLyrics(this)">🎤</button>
-</div>
-
-    </div>
-
-    <div class="song-row" onclick="playSong('songs/desi2.mp3', 'Desi Song 2', 'images/Page 2/Desi-girls.webp')">
-      <div class="track-number">2</div>
-      <div class="song-title">Desi Song 2</div>
-      <div class="song-icons">
-  <a href="https://open.spotify.com/" target="_blank">
-    <img src="images/icons/spot.png" alt="Spotify" class="icon" />
-  </a>
-  <a href="https://youtube.com/" target="_blank">
-    <img src="images/icons/youtube.png" alt="YouTube" class="icon" />
-  </a>
-  <button onclick="toggleLyrics(this)">🎤</button>
-</div>
-
-    </div>
-  </div>
-
-  <!-- Player -->
- <!-- Bottom Music Player -->
-<div id="custom-player">
-  <!-- Left -->
-  <div class="player-left">
-    <img id="player-cover" src="images/Page 2/[HIGH-TIME].webp" alt="Cover" />
-    <div id="player-title">Track Name</div>
-  </div>
-
-  <!-- Center -->
-  <div class="player-center">
-    <div class="control-buttons">
-      <button id="shuffle"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
-      <button id="prev"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
-      <button id="play-pause"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
-      <button id="next"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
-      <button id="loop"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
-    </div>
-    <div class="timeline-wrapper">
-      <span id="current-time">0:00</span>
-      <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
-      <span id="duration">0:00</span>
-    </div>
-  </div>
-
-  <!-- Right -->
-  <div class="player-right">
-    <button id="volume"><img src="images/icons/volume.svg" alt="Volume" class="icon"></button>
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
-    <button id="lyrics-toggle"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
-    <button id="queue"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
+  <div class="song-row" data-index="0" onclick="queueAndPlay(0)">
+  <span class="track-number">1</span>
+  <img src="images/desigirls/Jale 2.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Jale 2</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1knnSlcBlhlcNsQkGyVl9X" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(0)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
   </div>
 </div>
+<div class="lyrics hidden">Lyrics for Jale 2...</div>
+
+<div class="song-row" data-index="1" onclick="queueAndPlay(1)">
+  <span class="track-number">2</span>
+  <img src="images/desigirls/52 Gaj Ka Daman.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">52 Gaj Ka Daman</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6WsSXAOzm6xpWRivqdt98X" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(1)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for 52 Gaj Ka Daman...</div>
+
+<div class="song-row" data-index="2" onclick="queueAndPlay(2)">
+  <span class="track-number">3</span>
+  <img src="images/desigirls/Matak Chalungi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Matak Chalungi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1Gm2FrZ7U1zu83mg7PQ2mY" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(2)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Matak Chalungi...</div>
+
+<div class="song-row" data-index="3" onclick="queueAndPlay(3)">
+  <span class="track-number">4</span>
+  <img src="images/desigirls/Solid Body.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Solid Body</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/79Et6IQNYLKCKSCf1XKssB" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(3)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Solid Body...</div>
+
+<div class="song-row" data-index="4" onclick="queueAndPlay(4)">
+  <span class="track-number">5</span>
+  <img src="images/desigirls/Jale.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Jale</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/41ERSeHg2qdWsr9TMzzRmg" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(4)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Jale...</div>
+
+<div class="song-row" data-index="5" onclick="queueAndPlay(5)">
+  <span class="track-number">6</span>
+  <img src="images/desigirls/Bandook 2.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Bandook 2</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0GWMpPg91uBc1rBISnXAPl" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(5)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Bandook 2...</div>
+
+<div class="song-row" data-index="6" onclick="queueAndPlay(6)">
+  <span class="track-number">7</span>
+  <img src="images/desigirls/Kallo FeatAjay HoodaPardeep Boora.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kallo (Feat.Ajay Hooda,Pardeep Boora)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3BE76aRYXnhIO5CSDJWzQV" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(6)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kallo (Feat.Ajay Hooda,Pardeep Boora)...</div>
+
+<div class="song-row" data-index="7" onclick="queueAndPlay(7)">
+  <span class="track-number">8</span>
+  <img src="images/desigirls/Tu Cheez Lajwab.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tu Cheez Lajwab</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6AJTmFeGSIMxWquWvI4c9k" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(7)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tu Cheez Lajwab...</div>
+
+<div class="song-row" data-index="8" onclick="queueAndPlay(8)">
+  <span class="track-number">9</span>
+  <img src="images/desigirls/Naam Tera.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Naam Tera</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4rmiJ39A6d9OIRrL3xGmaD" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(8)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Naam Tera...</div>
 
 
+<div class="song-row" data-index="9" onclick="queueAndPlay(9)">
+  <span class="track-number">10</span>
+  <img src="images/desigirls/Dhai Litar Dudh.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dhai Litar Dudh</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3lEWPbUG3SVtJcvPWMxaaL" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(9)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dhai Litar Dudh...</div>
 
+<div class="song-row" data-index="10" onclick="queueAndPlay(10)">
+  <span class="track-number">11</span>
+  <img src="images/desigirls/Teri Lat Lag Ja Gi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Teri Lat Lag Ja Gi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7x1wGqbf7SpwDF7LRSQG9y" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(10)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Teri Lat Lag Ja Gi...</div>
+
+<div class="song-row" data-index="11" onclick="queueAndPlay(11)">
+  <span class="track-number">12</span>
+  <img src="images/desigirls/Fevicol Se.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Fevicol Se</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0wEgK7RKkB1R6sR5Nrwh5g" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(11)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Fevicol Se...</div>
+
+<div class="song-row" data-index="12" onclick="queueAndPlay(12)">
+  <span class="track-number">13</span>
+  <img src="images/desigirls/Munni Badnaam.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Munni Badnaam</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6fORBVECjNDJ1gdq5uuoAz" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(12)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Munni Badnaam...</div>
+
+<div class="song-row" data-index="13" onclick="queueAndPlay(13)">
+  <span class="track-number">14</span>
+  <img src="images/desigirls/Hookah Bar.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Hookah Bar</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4AoQVhME8Ko6LNm4lV2wwQ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(13)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Hookah Bar...</div>
+
+<div class="song-row" data-index="14" onclick="queueAndPlay(14)">
+  <span class="track-number">15</span>
+  <img src="images/desigirls/Chikni Chameli.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chikni Chameli</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1vSXwYeKnzsVvekSpqVabx" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(14)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chikni Chameli...</div>
+
+<div class="song-row" data-index="15" onclick="queueAndPlay(15)">
+  <span class="track-number">16</span>
+  <img src="images/desigirls/Le Le Mazaa Le.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Le Le Mazaa Le</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0V6i9XZ7NOfXQAygSaswnM" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(15)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Le Le Mazaa Le...</div>
+
+<div class="song-row" data-index="16" onclick="queueAndPlay(16)">
+  <span class="track-number">17</span>
+  <img src="images/desigirls/Beedi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Beedi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2S6okBMEo9oWCbdWGrxth3" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(16)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Beedi...</div>
+
+<div class="song-row" data-index="17" onclick="queueAndPlay(17)">
+  <span class="track-number">18</span>
+  <img src="images/desigirls/Character Dheela.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Character Dheela</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1r4oikmMdZZiGHkPA4hSoe" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(17)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Character Dheela...</div>
+
+<div class="song-row" data-index="18" onclick="queueAndPlay(18)">
+  <span class="track-number">19</span>
+  <img src="images/desigirls/Chhaliya.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chhaliya</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/70r85LQ7Hcof30PJmksilm" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(18)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chhaliya...</div>
+
+<div class="song-row" data-index="19" onclick="queueAndPlay(19)">
+  <span class="track-number">20</span>
+  <img src="images/desigirls/Jhalak Dikhla Ja.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Jhalak Dikhla Ja</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/43SKg10CCeaoyr7XSKfpTR" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(19)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Jhalak Dikhla Ja...</div>
+
+<div class="song-row" data-index="20" onclick="queueAndPlay(20)">
+  <span class="track-number">21</span>
+  <img src="images/desigirls/Tinku Jiya.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tinku Jiya</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6tjzeB1k0x9paSlMsGKE2V" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(20)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tinku Jiya...</div>
+
+<div class="song-row" data-index="21" onclick="queueAndPlay(21)">
+  <span class="track-number">22</span>
+  <img src="images/desigirls/Jeene Ke Hain Chaar Din.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Jeene Ke Hain Chaar Din</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4UJih0aZ8YcQm4CIErba45" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(21)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Jeene Ke Hain Chaar Din...</div>
+
+<div class="song-row" data-index="22" onclick="queueAndPlay(22)">
+  <span class="track-number">23</span>
+  <img src="images/desigirls/Anarkali Disco Chali.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Anarkali Disco Chali</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0YKEBiwNh4VGsuf99aNfLa" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(22)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Anarkali Disco Chali...</div>
+
+<div class="song-row" data-index="23" onclick="queueAndPlay(23)">
+  <span class="track-number">24</span>
+  <img src="images/desigirls/Tere Naal Nachna From Nawabzaade.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tere Naal Nachna (From  Nawabzaade )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5DIt4eq2D6CZjX1s5jwrnP" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(23)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tere Naal Nachna (From  Nawabzaade )...</div>
+
+<div class="song-row" data-index="24" onclick="queueAndPlay(24)">
+  <span class="track-number">25</span>
+  <img src="images/desigirls/Pinky From Zanjeer.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Pinky (From  Zanjeer )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/70e69kyMF2tp8TMdh6rDLh" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(24)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Pinky (From  Zanjeer )...</div>
+
+<div class="song-row" data-index="25" onclick="queueAndPlay(25)">
+  <span class="track-number">26</span>
+  <img src="images/desigirls/Tareefan.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tareefan</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2SN54RFfaafTk7TE1n1Na4" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(25)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tareefan...</div>
+
+<div class="song-row" data-index="26" onclick="queueAndPlay(26)">
+  <span class="track-number">27</span>
+  <img src="images/desigirls/No Entry Ishq Di Galli Vich.jpg" alt="Cover" class="mini-thumb">       
+  <div class="song-title">No Entry: Ishq Di Galli Vich</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0BTq3SmPRKdTrJXHAtq2S5" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(26)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for No Entry: Ishq Di Galli Vich...</div>
+
+<div class="song-row" data-index="27" onclick="queueAndPlay(27)">
+  <span class="track-number">28</span>
+  <img src="images/desigirls/Right Now Now.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Right Now Now</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5IXl8VmP5j38FtLIW5bWlP" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(27)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Right Now Now...</div>
+
+<div class="song-row" data-index="28" onclick="queueAndPlay(28)">
+  <span class="track-number">29</span>
+  <img src="images/desigirls/Lovely.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lovely</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1YTU6H9mLYZZMP78x5V7KC" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(28)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lovely...</div>
+
+<div class="song-row" data-index="29" onclick="queueAndPlay(29)">
+  <span class="track-number">30</span>
+  <img src="images/desigirls/Mercy.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Mercy</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/04VUjNx30IrigVZU3CQmrQ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(29)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Mercy...</div>
+
+<div class="song-row" data-index="30" onclick="queueAndPlay(30)">
+  <span class="track-number">31</span>
+  <img src="images/desigirls/Buzz feat Badshah.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Buzz (feat. Badshah)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3XYvdqcZrTmRntFDDbJkJd" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(30)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Buzz (feat. Badshah)...</div>
+
+<div class="song-row" data-index="31" onclick="queueAndPlay(31)">
+  <span class="track-number">32</span>
+  <img src="images/desigirls/Oh Girl Youre Mine.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Oh Girl You're Mine .</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4O5ERhWIhAnBelhNDHcSlA" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(31)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Oh Girl You're Mine ....</div>
+
+<div class="song-row" data-index="32" onclick="queueAndPlay(32)">
+  <span class="track-number">33</span>
+  <img src="images/desigirls/Ude Dil Befikre.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ude Dil Befikre</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0hgTkEDY9oIG5DPKN39KHP" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(32)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ude Dil Befikre...</div>
+
+<div class="song-row" data-index="33" onclick="queueAndPlay(33)">
+  <span class="track-number">34</span>
+  <img src="images/desigirls/Dance Basanti.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dance Basanti</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1NxlktIRgiAPJ8U06v9veI" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(33)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dance Basanti...</div>
+
+<div class="song-row" data-index="34" onclick="queueAndPlay(34)">
+  <span class="track-number">35</span>
+  <img src="images/desigirls/Gulaabo.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Gulaabo</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/430wsIhf0JvOqocAcOQ7VR" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(34)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Gulaabo...</div>
+
+<div class="song-row" data-index="35" onclick="queueAndPlay(35)">
+  <span class="track-number">36</span>
+  <img src="images/desigirls/Besharmi Ki Height.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Besharmi Ki Height</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1qtl3vB0uqciZ94g3S6TO7" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(35)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Besharmi Ki Height...</div>
+
+<div class="song-row" data-index="36" onclick="queueAndPlay(36)">
+  <span class="track-number">37</span>
+  <img src="images/desigirls/High Heels Te Nachche From Ki amp Ka feat Jaz Dhami Aditi Singh Sharma.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">High Heels Te Nachche (From  Ki &amp; Ka ) (feat. Jaz Dhami, Aditi Singh Sharma)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0MAL4lkJiJgCwGdO0Q264f" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(36)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for High Heels Te Nachche (From  Ki &amp; Ka ) (feat. Jaz Dhami, Aditi Singh Sharma)...</div>
+
+<div class="song-row" data-index="37" onclick="queueAndPlay(37)">
+  <span class="track-number">38</span>
+  <img src="images/desigirls/Ucha Lamba Kad.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ucha Lamba Kad</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2hyYqX8IVVxFEFIUf0zZam" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(37)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ucha Lamba Kad...</div>
+
+<div class="song-row" data-index="38" onclick="queueAndPlay(38)">
+  <span class="track-number">39</span>
+  <img src="images/desigirls/Paisa.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Paisa</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5waPZcxgliOcZxCjswryDb" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(38)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Paisa...</div>
+
+<div class="song-row" data-index="39" onclick="queueAndPlay(39)">
+  <span class="track-number">40</span>
+  <img src="images/desigirls/Zara Zara Touch Me.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Zara Zara Touch Me</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/15BmNnMZTnPTawkFaJv1JR" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(39)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Zara Zara Touch Me...</div>
+
+<div class="song-row" data-index="40" onclick="queueAndPlay(40)">
+  <span class="track-number">41</span>
+  <img src="images/desigirls/Bebo.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Bebo</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0GNq37PiMmflUA7uCnSh3W" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(40)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Bebo...</div>
+
+<div class="song-row" data-index="41" onclick="queueAndPlay(41)">
+  <span class="track-number">42</span>
+  <img src="images/desigirls/Crazy Kiya Re.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Crazy Kiya Re</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0se928CIhZPlfVGi3A6zrx" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(41)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Crazy Kiya Re...</div>
+
+<div class="song-row" data-index="42" onclick="queueAndPlay(42)">
+  <span class="track-number">43</span>
+  <img src="images/desigirls/Afghan Jalebi Film Version.jpg" alt="Cover" class="mini-thumb">       
+  <div class="song-title">Afghan Jalebi (Film Version)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1rEVydQSe04NJUqyyEyeEq" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(42)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Afghan Jalebi (Film Version)...</div>
+
+<div class="song-row" data-index="43" onclick="queueAndPlay(43)">
+  <span class="track-number">44</span>
+  <img src="images/desigirls/Mummy Nu Pasand From Jai Mummy Di.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Mummy Nu Pasand (From  Jai Mummy Di )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/74qF0JeFMVilMEeFDiQZ48" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(43)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Mummy Nu Pasand (From  Jai Mummy Di )...</div>
+
+<div class="song-row" data-index="44" onclick="queueAndPlay(44)">
+  <span class="track-number">45</span>
+  <img src="images/desigirls/Kajra Re.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kajra Re</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/72HdutlIHBZJ7WT1xVAAZT" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(44)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kajra Re...</div>
+
+<div class="song-row" data-index="45" onclick="queueAndPlay(45)">
+  <span class="track-number">46</span>
+  <img src="images/desigirls/Mashallah.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Mashallah</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1prGortu002OYC8sGfpAIj" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(45)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Mashallah...</div>
+
+<div class="song-row" data-index="46" onclick="queueAndPlay(46)">
+  <span class="track-number">47</span>
+  <img src="images/desigirls/Mungda.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Mungda</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7nY0GX6LDCPc0aBMTEO1cR" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(46)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Mungda...</div>
+
+<div class="song-row" data-index="47" onclick="queueAndPlay(47)">
+  <span class="track-number">48</span>
+  <img src="images/desigirls/Galat Baat Hai.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Galat Baat Hai</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5AM51LU4hTpGSdQEFQmZTw" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(47)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Galat Baat Hai...</div>
+
+<div class="song-row" data-index="48" onclick="queueAndPlay(48)">
+  <span class="track-number">49</span>
+  <img src="images/desigirls/Touch Me.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Touch Me</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6Niy4LfcTcvJJkzfLz5W1B" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(48)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Touch Me...</div>
+
+<div class="song-row" data-index="49" onclick="queueAndPlay(49)">
+  <span class="track-number">50</span>
+  <img src="images/desigirls/Long Drive.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Long Drive</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0sSapNABKrGwgaMhn0p8uL" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(49)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Long Drive...</div>
+
+<div class="song-row" data-index="50" onclick="queueAndPlay(50)">
+  <span class="track-number">51</span>
+  <img src="images/desigirls/Aa Re Pritam Pyaare.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Aa Re Pritam Pyaare</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3CXHPRFNic9WOsazT4huOJ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(50)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Aa Re Pritam Pyaare...</div>
+
+<div class="song-row" data-index="51" onclick="queueAndPlay(51)">
+  <span class="track-number">52</span>
+  <img src="images/desigirls/Thug Le.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Thug Le</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1opxtm6zIv7IF19S0eCtvV" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(51)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Thug Le...</div>
+
+<div class="song-row" data-index="52" onclick="queueAndPlay(52)">
+  <span class="track-number">53</span>
+  <img src="images/desigirls/Tera Ishq Bada Teekha.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Tera Ishq Bada Teekha</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/73Kwkz2RTEOIVUphRlCZfv" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(52)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Tera Ishq Bada Teekha...</div>
+
+<div class="song-row" data-index="53" onclick="queueAndPlay(53)">
+  <span class="track-number">54</span>
+  <img src="images/desigirls/The Disco Song.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">The Disco Song</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3UaP2PQwhA31keZXt7oPLA" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(53)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for The Disco Song...</div>
+
+<div class="song-row" data-index="54" onclick="queueAndPlay(54)">
+  <span class="track-number">55</span>
+  <img src="images/desigirls/Halkat Jawani.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Halkat Jawani</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2h1d6XPdBms5i7YwyfOO7q" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(54)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Halkat Jawani...</div>
+
+<div class="song-row" data-index="55" onclick="queueAndPlay(55)">
+  <span class="track-number">56</span>
+  <img src="images/desigirls/Aashiq Banaya Aapne.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Aashiq Banaya Aapne</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/61mkuGe4SjLAZ5wg49NWQY" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(55)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Aashiq Banaya Aapne...</div>
+
+<div class="song-row" data-index="56" onclick="queueAndPlay(56)">
+  <span class="track-number">57</span>
+  <img src="images/desigirls/O Saki Saki From Batla House.jpg" alt="Cover" class="mini-thumb">   
+  <div class="song-title">O Saki Saki (From  Batla House )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4cFwhwH5ydnHgB0Tv3lZsm" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(56)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for O Saki Saki (From  Batla House )...</div>
+
+<div class="song-row" data-index="57" onclick="queueAndPlay(57)">
+  <span class="track-number">58</span>
+  <img src="images/desigirls/Second Hand Jawaani.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Second Hand Jawaani</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7kz0NubU5M4k9kdARMBlFK" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(57)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Second Hand Jawaani...</div>
+
+<div class="song-row" data-index="58" onclick="queueAndPlay(58)">
+  <span class="track-number">59</span>
+  <img src="images/desigirls/Husn Parcham.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Husn Parcham</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/70H2wVmlgHTGtQyrdodCjT" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(58)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Husn Parcham...</div>
+
+<div class="song-row" data-index="59" onclick="queueAndPlay(59)">
+  <span class="track-number">60</span>
+  <img src="images/desigirls/Ainvayi Ainvayi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ainvayi Ainvayi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/74AqVxZ3oXwJ8olHssBUG3" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(59)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ainvayi Ainvayi...</div>
+
+<div class="song-row" data-index="60" onclick="queueAndPlay(60)">
+  <span class="track-number">61</span>
+  <img src="images/desigirls/Twist.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Twist</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7gl8XJ8EmiObfSFppTATt6" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(60)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Twist...</div>
+
+<div class="song-row" data-index="61" onclick="queueAndPlay(61)">
+  <span class="track-number">62</span>
+  <img src="images/desigirls/Ghagra.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Ghagra</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5YY8EsBdUYAg1NJQIvgCEj" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(61)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Ghagra...</div>
+
+<div class="song-row" data-index="62" onclick="queueAndPlay(62)">
+  <span class="track-number">63</span>
+  <img src="images/desigirls/Lucky Boy.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lucky Boy</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7smFVnYqFp9RwKg00C6nKN" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(62)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lucky Boy...</div>
+
+<div class="song-row" data-index="63" onclick="queueAndPlay(63)">
+  <span class="track-number">64</span>
+  <img src="images/desigirls/Caller Tune.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Caller Tune</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5mu3t5NyJP1KajYl87xLlx" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(63)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Caller Tune...</div>
+
+<div class="song-row" data-index="64" onclick="queueAndPlay(64)">
+  <span class="track-number">65</span>
+  <img src="images/desigirls/Dance Like.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dance Like</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/36EPfDEkfLYQLt8Fvced8x" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(64)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dance Like...</div>
+  
+<div class="song-row" data-index="65" onclick="queueAndPlay(65)">
+  <span class="track-number">66</span>
+  <img src="images/desigirls/Manali Trance.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Manali Trance</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1ySCeH8MLWheNDBxKCXqsD" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(65)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Manali Trance...</div>  
+
+<div class="song-row" data-index="66" onclick="queueAndPlay(66)">
+  <span class="track-number">67</span>
+  <img src="images/desigirls/Manma Emotion Jaage.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Manma Emotion Jaage</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6emsLWJ2bu8vCP7BslV76d" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(66)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Manma Emotion Jaage...</div>
+
+<div class="song-row" data-index="67" onclick="queueAndPlay(67)">
+  <span class="track-number">68</span>
+  <img src="images/desigirls/Dil Mera Muft Ka.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dil Mera Muft Ka</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7xrosWOQbSHqhZWRXY69iS" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(67)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dil Mera Muft Ka...</div>
+
+<div class="song-row" data-index="68" onclick="queueAndPlay(68)">
+  <span class="track-number">69</span>
+  <img src="images/desigirls/Dilbar From Satyameva Jayate.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dilbar (From  Satyameva Jayate )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4tjLYTXFqZhkUDga4bQ0yl" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(68)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dilbar (From  Satyameva Jayate )...</div>
+
+<div class="song-row" data-index="69" onclick="queueAndPlay(69)">
+  <span class="track-number">70</span>
+  <img src="images/desigirls/Naagin.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Naagin</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7gAyu0od48mkaCw1laPKVC" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(69)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Naagin...</div>
+
+<div class="song-row" data-index="70" onclick="queueAndPlay(70)">
+  <span class="track-number">71</span>
+  <img src="images/desigirls/Bhool Bhulaiyaa.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Bhool Bhulaiyaa</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6CCV7FeYgEQ7Ekbes6B36Q" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(70)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Bhool Bhulaiyaa...</div>
+
+<div class="song-row" data-index="71" onclick="queueAndPlay(71)">
+  <span class="track-number">72</span>
+  <img src="images/desigirls/Love Mera Hit Hit.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Love Mera Hit Hit</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2VgbvKdaSOXWByBKYgBsEc" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(71)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Love Mera Hit Hit...</div>
+
+<div class="song-row" data-index="72" onclick="queueAndPlay(72)">
+  <span class="track-number">73</span>
+  <img src="images/desigirls/Aahun Aahun.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Aahun Aahun</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1n1b2lwdRdWF5RAaA0vewk" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(72)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Aahun Aahun...</div>    
+
+<div class="song-row" data-index="73" onclick="queueAndPlay(73)">
+  <span class="track-number">74</span>
+  <img src="images/desigirls/Haan Main Galat.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Haan Main Galat</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0MLZAgKQKHbPsJ12qHS860" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(73)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Haan Main Galat...</div>
+
+<div class="song-row" data-index="74" onclick="queueAndPlay(74)">
+  <span class="track-number">75</span>
+  <img src="images/desigirls/Marjaani.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Marjaani</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2nNaw1QUcqiEX6pBFxcpp3" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(74)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Marjaani...</div>       
+
+<div class="song-row" data-index="75" onclick="queueAndPlay(75)">
+  <span class="track-number">76</span>
+  <img src="images/desigirls/Sunny Sunny From Yaariyan.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Sunny Sunny (From  Yaariyan )</div> 
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1TaeNA6443E9MHtbGXV0s8" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(75)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Sunny Sunny (From  Yaariyan )...</div>
+
+<div class="song-row" data-index="76" onclick="queueAndPlay(76)">
+  <span class="track-number">77</span>
+  <img src="images/desigirls/Baby Doll.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Baby Doll</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5c3mUtkS8FvumKaVkcpB0H" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(76)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Baby Doll...</div>      
+
+<div class="song-row" data-index="77" onclick="queueAndPlay(77)">
+  <span class="track-number">78</span>
+  <img src="images/desigirls/Laung Da Lashkara.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Laung Da Lashkara</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5pQODzb8j3xMQ1qvrQXJvo" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(77)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Laung Da Lashkara...</div>
+
+<div class="song-row" data-index="78" onclick="queueAndPlay(78)">
+  <span class="track-number">79</span>
+  <img src="images/desigirls/One Two Three Four Get On The Dance Floor.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">One Two Three Four (Get On The Dance Floor)</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3XyFQxpSlGowWpZkIn3ISA" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(78)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for One Two Three Four (Get On The Dance Floor)...</div>
+
+<div class="song-row" data-index="79" onclick="queueAndPlay(79)">
+  <span class="track-number">80</span>
+  <img src="images/desigirls/Chittiyaan Kalaiyaan.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chittiyaan Kalaiyaan</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6XjJXPP3UiGtAQpYkD01c0" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(79)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chittiyaan Kalaiyaan...</div>
+
+<div class="song-row" data-index="80" onclick="queueAndPlay(80)">
+  <span class="track-number">81</span>
+  <img src="images/desigirls/Aayi Nai From Stree 2.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Aayi Nai (From  Stree 2 )</div>     
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1mQUEvGR7Sbt2OCz2gFrdx" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(80)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Aayi Nai (From  Stree 2 )...</div>
+
+<div class="song-row" data-index="81" onclick="queueAndPlay(81)">
+  <span class="track-number">82</span>
+  <img src="images/desigirls/Laila Main Laila.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Laila Main Laila</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0eNiqkazTEYJJ8fMRPyJx8" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(81)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Laila Main Laila...</div>
+
+<div class="song-row" data-index="82" onclick="queueAndPlay(82)">
+  <span class="track-number">83</span>
+  <img src="images/desigirls/Gali Gali From Kgf Chapter 1.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Gali Gali (From  Kgf Chapter 1 )</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5x72Q1SyiDHJ4IF2mRzfkg" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(82)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Gali Gali (From  Kgf Chapter 1 )...</div>
+
+<div class="song-row" data-index="83" onclick="queueAndPlay(83)">
+  <span class="track-number">84</span>
+  <img src="images/desigirls/Lat Lag Gayee.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lat Lag Gayee</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/5XsoDbDt98b0FkFLOhsJuS" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(83)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Lat Lag Gayee...</div>  
+
+<div class="song-row" data-index="84" onclick="queueAndPlay(84)">
+  <span class="track-number">85</span>
+  <img src="images/desigirls/Kaun Nachdi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kaun Nachdi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7r8QeC6Uy3AbIXqH7W9y0K" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(84)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kaun Nachdi...</div>    
+
+<div class="song-row" data-index="85" onclick="queueAndPlay(85)">
+  <span class="track-number">86</span>
+  <img src="images/desigirls/Pink Lips.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Pink Lips</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2tyITgmOGVz6rqleDokbEN" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(85)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Pink Lips...</div>      
+
+<div class="song-row" data-index="86" onclick="queueAndPlay(86)">
+  <span class="track-number">87</span>
+  <img src="images/desigirls/Daddy Mummy.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Daddy Mummy</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/1R4RQCBKV9kHjZG7Jp00kn" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(86)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Daddy Mummy...</div>    
+
+<div class="song-row" data-index="87" onclick="queueAndPlay(87)">
+  <span class="track-number">88</span>
+  <img src="images/desigirls/Oye Oye.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Oye Oye</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/44ohhhvkNX8bpfVTF6V7Tc" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(87)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Oye Oye...</div>        
+
+<div class="song-row" data-index="88" onclick="queueAndPlay(88)">
+  <span class="track-number">89</span>
+  <img src="images/desigirls/Do U Know.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Do U Know</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0VCf70ilRV5xjjf5V7H0SF" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(88)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Do U Know...</div>      
+
+<div class="song-row" data-index="89" onclick="queueAndPlay(89)">
+  <span class="track-number">90</span>
+  <img src="images/desigirls/Laal Dupatta.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Laal Dupatta</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2zGaY3iWYTHjgpSLC0wqdx" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(89)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Laal Dupatta...</div>   
+
+<div class="song-row" data-index="90" onclick="queueAndPlay(90)">
+  <span class="track-number">91</span>
+  <img src="images/desigirls/Chammak Challo.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chammak Challo</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0EH7sgeiFqDa3eS7ieW2zs" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(90)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chammak Challo...</div> 
+
+<div class="song-row" data-index="91" onclick="queueAndPlay(91)">
+  <span class="track-number">92</span>
+  <img src="images/desigirls/Kar Gayi Chull.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kar Gayi Chull</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3BhjbaGeI7E0CiIjctfdD3" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(91)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kar Gayi Chull...</div> 
+
+<div class="song-row" data-index="92" onclick="queueAndPlay(92)">
+  <span class="track-number">93</span>
+  <img src="images/desigirls/Desi Girl.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Desi Girl</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3Qpk2qHree1RTH5lZaKnEK" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(92)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Desi Girl...</div>      
+
+<div class="song-row" data-index="93" onclick="queueAndPlay(93)">
+  <span class="track-number">94</span>
+  <img src="images/desigirls/Bang Bang.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Bang Bang</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/464gxyow4GJ7Wuz3cHrdBB" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(93)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Bang Bang...</div>      
+
+<div class="song-row" data-index="94" onclick="queueAndPlay(94)">
+  <span class="track-number">95</span>
+  <img src="images/desigirls/Darling.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Darling</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/6z3p3Gm5FOH1n22ummzEh7" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(94)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Darling...</div>        
+
+<div class="song-row" data-index="95" onclick="queueAndPlay(95)">
+  <span class="track-number">96</span>
+  <img src="images/desigirls/Getup Jawani.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Getup Jawani</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0eggrcnyZPWwtHIkRLtAIU" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(95)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Getup Jawani...</div>   
+
+<div class="song-row" data-index="96" onclick="queueAndPlay(96)">
+  <span class="track-number">97</span>
+  <img src="images/desigirls/Dhadhang Dhang.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Dhadhang Dhang</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/3clrh7xJORCwm5ywomx4hs" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(96)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Dhadhang Dhang...</div> 
+
+<div class="song-row" data-index="97" onclick="queueAndPlay(97)">
+  <span class="track-number">98</span>
+  <img src="images/desigirls/Kamli.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Kamli</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2QY6SJXVnBFaqxOZhC1Fuu" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(97)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Kamli...</div>
+
+<div class="song-row" data-index="98" onclick="queueAndPlay(98)">
+  <span class="track-number">99</span>
+  <img src="images/desigirls/Rani Tu Mein Raja.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Rani Tu Mein Raja</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/4SLskArd5wu07l6Zd58wL3" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(98)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Rani Tu Mein Raja...</div>
+
+<div class="song-row" data-index="99" onclick="queueAndPlay(99)">
+  <span class="track-number">100</span>
+  <img src="images/desigirls/Pallo Latke.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Pallo Latke</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2Z75W3sVrq9hVGJOskxcAw" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(99)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Pallo Latke...</div>    
+
+<div class="song-row" data-index="100" onclick="queueAndPlay(100)">
+  <span class="track-number">101</span>
+  <img src="images/desigirls/Yaar Naa Miley.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Yaar Naa Miley</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/56lHtVpvNxFSKewJKpeYc3" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(100)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Yaar Naa Miley...</div> 
+
+<div class="song-row" data-index="101" onclick="queueAndPlay(101)">
+  <span class="track-number">102</span>
+  <img src="images/desigirls/Paani Waala Dance.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Paani Waala Dance</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/0Wt2nTFdp8maSu2cNRMxDx" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(101)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Paani Waala Dance...</div>
+
+<div class="song-row" data-index="102" onclick="queueAndPlay(102)">
+  <span class="track-number">103</span>
+  <img src="images/desigirls/Balma.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Balma</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2AAYoDgYtx5WCAg7Axeg70" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(102)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Balma...</div>
+
+<div class="song-row" data-index="103" onclick="queueAndPlay(103)">
+  <span class="track-number">104</span>
+  <img src="images/desigirls/Lazy Lamhe.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Lazy Lamhe</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/2IZQG2wYoVncO3hWCD4IyM" target="_blank" onclick="event.stopPropagation()">      
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(103)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">     
+    </button>
+  </div>
+  </div>
+  <div class= "lyrics hidden">Lyrics for Lazy Lamhe</div>
+
+<div class="song-row" data-index="104" onclick="queueAndPlay(104)">
+  <span class="track-number">105</span>
+  <img src="images/desigirls/Chamma Chamma.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Chamma Chamma</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/00NksXMaWtsTARuoZmt0GJ" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(104)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Chamma Chamma...</div>
+
+<div class="song-row" data-index="105" onclick="queueAndPlay(105)">
+  <span class="track-number">106</span>
+  <img src="images/desigirls/Aa Toh Sahi.jpg" alt="Cover" class="mini-thumb">
+  <div class="song-title">Aa Toh Sahi</div>
+  <div class="song-icons">
+    <a href="https://open.spotify.com/track/7rF4dZl3UAzfkUWxXrDzRk" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/spot.png" alt="Spotify" class="icon">
+    </a>
+    <a href="#" target="_blank" onclick="event.stopPropagation()">
+      <img src="images/icons/youtube.png" alt="YouTube" class="icon">
+    </a>
+    <button onclick="event.stopPropagation(); addToQueue(105)" class="queue-btn">
+      <img src="images/icons/add.png" alt="Add to Queue">
+    </button>
+  </div>
+</div>
+<div class="lyrics hidden">Lyrics for Aa Toh Sahi...</div>
+
+    <!-- Bottom Music Player -->
+  <div id="custom-player">
+    <div class="player-left">
+      <img id="player-cover" src="" alt="Cover" />
+      <div id="player-title">Track Name</div>
+    </div>
+    <div class="player-center">
+      <div class="control-buttons">
+        <button id="shuffle" onclick="toggleShuffle()"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
+        <button id="prev" onclick="prevSong()"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
+        <button id="play-pause" onclick="togglePlay()"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
+        <button id="next" onclick="nextSong()"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
+        <button id="loop" onclick="toggleLoop()"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
+      </div>
+      <div class="timeline-wrapper">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
+        <span id="total-duration">0:00</span>
+      </div>
+    </div>
+    <div class="player-right">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+      <button id="lyrics-toggle" onclick="toggleLyricsPlayer()"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
+      <button id="queue" onclick="showQueue()"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
+    </div>
+  </div>
+
+  <!-- Queue Modal -->
+  <div id="queue-modal" class="hidden">
+    <h3>Queue</h3>
+    <ul id="queue-list"></ul>
+    <button onclick="hideQueue()">Close</button>
+  </div>
+
+  <!-- Global Audio Element -->
+  <audio id="audio-player"></audio>
 </body>
 </html>

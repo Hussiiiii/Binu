@@ -2,75 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Desi Pyar 2.0 – Bindu's Playlist</title>
+  <title>Desi pyar 2.0 - Bindu's Playlist</title>
   <link rel="stylesheet" href="desi-pyar-2.0.css" />
   <link rel="icon" type="image/png" href="images/Page 1/favicon.png" />
-  <script defer src="player.js"></script>
+  <script defer src="desipyar2.0.js"></script>
 </head>
 <body>
-
-  <!-- Playlist Header -->
+  <!-- Header with playlist image and title -->
   <section class="playlist-hero-row">
-    <img src="images/Page 2/Desi-pyar-2.0.webp" alt="Desi Pyar 2.0" class="playlist-thumb large" />
-    <h1 class="playlist-name">Desi Pyar 2.0</h1>
+    <img src="images/Page 2/Desi-pyar-2.0.webp" alt="Desi pyar 2.0" class="playlist-thumb large" />
+    <h1 class="playlist-header-title">Desi pyar 2.0</h1>
   </section>
 
-  <!-- Songs Section -->
-  <section class="songs-section">
-    <div class="song-row" onclick="playSong('audio/desi2_1.mp3', 'Desi Pyar 2.0 – Track 1', 'images/Page 2/Desi-pyar-2.0.webp')">
-      <span class="track-number">1</span>
-      <div class="song-title">Desi Pyar 2.0 – Track 1</div>
-      <div class="song-icons">
-  <a href="https://open.spotify.com/" target="_blank">
-    <img src="images/icons/spot.png" alt="Spotify" class="icon" />
-  </a>
-  <a href="https://youtube.com/" target="_blank">
-    <img src="images/icons/youtube.png" alt="YouTube" class="icon" />
-  </a>
-  <button onclick="toggleLyrics(this)">🎤</button>
-</div>
 
+
+    <!-- Bottom Music Player -->
+  <div id="custom-player">
+    <div class="player-left">
+      <img id="player-cover" src="" alt="Cover" />
+      <div id="player-title">Track Name</div>
     </div>
-    <div class="lyrics hidden">
-      Lyrics for Desi Pyar 2.0 – Track 1 go here...
+    <div class="player-center">
+      <div class="control-buttons">
+        <button id="shuffle" onclick="toggleShuffle()"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
+        <button id="prev" onclick="prevSong()"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
+        <button id="play-pause" onclick="togglePlay()"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
+        <button id="next" onclick="nextSong()"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
+        <button id="loop" onclick="toggleLoop()"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
+      </div>
+      <div class="timeline-wrapper">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
+        <span id="total-duration">0:00</span>
+      </div>
     </div>
-
-    <!-- Add more tracks as needed -->
-  </section>
-
-  <!-- Bottom Music Player -->
- <!-- Bottom Music Player -->
-<div id="custom-player">
-  <!-- Left -->
-  <div class="player-left">
-    <img id="player-cover" src="images/Page 2/[HIGH-TIME].webp" alt="Cover" />
-    <div id="player-title">Track Name</div>
-  </div>
-
-  <!-- Center -->
-  <div class="player-center">
-    <div class="control-buttons">
-      <button id="shuffle"><img src="images/icons/shuffle.svg" alt="Shuffle" class="icon"></button>
-      <button id="prev"><img src="images/icons/prev.svg" alt="Previous" class="icon"></button>
-      <button id="play-pause"><img src="images/icons/play.svg" alt="Play" class="icon" id="play-icon"></button>
-      <button id="next"><img src="images/icons/next.svg" alt="Next" class="icon"></button>
-      <button id="loop"><img src="images/icons/loop.svg" alt="Loop" class="icon"></button>
-    </div>
-    <div class="timeline-wrapper">
-      <span id="current-time">0:00</span>
-      <input type="range" id="seekbar" value="0" step="1" min="0" max="100">
-      <span id="duration">0:00</span>
+    <div class="player-right">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+      <button id="lyrics-toggle" onclick="toggleLyricsPlayer()"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
+      <button id="queue" onclick="showQueue()"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
     </div>
   </div>
 
-  <!-- Right -->
-  <div class="player-right">
-    <button id="volume"><img src="images/icons/volume.svg" alt="Volume" class="icon"></button>
-    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
-    <button id="lyrics-toggle"><img src="images/icons/lyrics.svg" alt="Lyrics" class="icon"></button>
-    <button id="queue"><img src="images/icons/queue.svg" alt="Queue" class="icon"></button>
+  <!-- Queue Modal -->
+  <div id="queue-modal" class="hidden">
+    <h3>Queue</h3>
+    <ul id="queue-list"></ul>
+    <button onclick="hideQueue()">Close</button>
   </div>
-</div>
 
+  <!-- Global Audio Element -->
+  <audio id="audio-player"></audio>
 </body>
 </html>
